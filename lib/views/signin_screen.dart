@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+
+import 'home_page.dart';
+
 class SignInScreen extends StatefulWidget {
   const SignInScreen({Key? key}) : super(key: key);
 
@@ -10,21 +13,27 @@ class _SignInScreenState extends State<SignInScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Center(
             child: Column(
               children: [
-                Image.asset("images/logo.png"),
-                Text(
-                    "সাইন ইন করুন ",
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 30,
-                  ),
+                Container(
+                  height: 150,
+                  width: 150,
+                  child: Image.asset("images/L2.jpg"),
                 ),
-                SizedBox(height: 40),
+                SizedBox(height: 30),
+                Text(
+                  "সাইন ইন করুন",
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 40,
+                      color: Colors.green),
+                ),
+                SizedBox(height: 100),
                 Container(
                   padding: EdgeInsets.all(20),
                   child: Column(
@@ -32,20 +41,20 @@ class _SignInScreenState extends State<SignInScreen> {
                     children: [
                       TextField(
                         decoration: InputDecoration(
-                            hintStyle: TextStyle(
-                              fontSize: 14,
-                              color: Colors.black,
+                          hintStyle: TextStyle(
+                            fontSize: 14,
+                            color: Colors.green,
+                          ),
+                          labelText: "ইমেল",
+                          labelStyle: TextStyle(
+                            fontSize: 14,
+                            color: Colors.green,
+                          ),
+                          focusedBorder: UnderlineInputBorder(
+                            borderSide: BorderSide(
+                              color: Colors.green,
                             ),
-                            labelText: "ইমেল",
-                            labelStyle: TextStyle(
-                              fontSize: 14,
-                              color: Colors.black,
-                            ),
-                            focusedBorder: UnderlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: Colors.black,
-                                )
-                            )
+                          ),
                         ),
                       ),
                       SizedBox(height: 10),
@@ -53,37 +62,39 @@ class _SignInScreenState extends State<SignInScreen> {
                         decoration: InputDecoration(
                             hintStyle: TextStyle(
                               fontSize: 14,
-                              color: Colors.black,
+                              color: Colors.green,
                             ),
                             labelText: "পাসওয়ার্ড",
                             labelStyle: TextStyle(
                               fontSize: 14,
-                              color: Colors.black,
+                              color: Colors.green,
                             ),
                             focusedBorder: UnderlineInputBorder(
                                 borderSide: BorderSide(
-                                  color: Colors.black,
-                                )
-                            )
-                        ),
+                              color: Colors.green,
+                            ))),
                       ),
                       SizedBox(height: 50),
                       Container(
                         height: 40,
                         width: 300,
                         decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(16),
-                            color: Colors.black,
+                          borderRadius: BorderRadius.circular(16),
+                          color: Colors.green,
                         ),
                         child: FlatButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => MyHomePage()));
+                          },
                           child: Text(
                             "সাইন ইন",
                             style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 18,
-                              color: Colors.white
-                            ),
+                                fontWeight: FontWeight.bold,
+                                fontSize: 18,
+                                color: Colors.white),
                           ),
                         ),
                       ),

@@ -1,0 +1,54 @@
+import 'package:flutter/material.dart';
+
+class MyHomePage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.green[100],
+      appBar: AppBar(
+        backgroundColor: Colors.green,
+        title: Text("Home Page"),
+        centerTitle: true,
+        elevation: 5,
+      ),
+      drawer: Drawer(),
+      body: GridView.builder(
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2,
+          ),
+          itemCount: 8,
+          itemBuilder: (context,index){
+            return Container(
+              padding: EdgeInsets.all(10.0),
+              child: Card(
+                margin: EdgeInsets.all(8.0),
+                child: InkWell(
+                  onTap: (){},
+                  splashColor: Colors.green,
+                  child: Center(
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Icon(
+                          Icons.home,
+                          size: 70.0,
+                          color: Colors.green,
+                        ),
+                        SizedBox(height: 10),
+                        Text(
+                            "আমাদের সম্পর্কে",
+                          style: TextStyle(
+                            color: Colors.green
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            );
+          }
+      ),
+    );
+  }
+}

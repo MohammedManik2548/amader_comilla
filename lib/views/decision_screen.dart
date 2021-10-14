@@ -20,36 +20,43 @@ class _DecisionScreenState extends State<DecisionScreen> {
           Center(
             child: Column(
               children: [
-                Image.asset("images/logo.png"),
+                Container(
+                  height: 150,
+                  width: 150,
+                  child: Image.asset("images/L2.jpg"),
+                ),
+                SizedBox(height: 20),
                 Text(
                   "আপনাকে স্বাগতম",
                   style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 40,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 40,
+                    color: Color(0xFF00A651),
                   ),
                 ),
-                SizedBox(height: 200),
+                SizedBox(height: 180),
                 Column(
                   children: [
                     Container(
                       height: 40,
                       width: 300,
                       decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(16),
-                          color: Colors.black,
+                        borderRadius: BorderRadius.circular(16),
+                        color: Colors.green,
                       ),
                       child: FlatButton(
                         onPressed: () {
-                          Navigator.push(context, MaterialPageRoute(
-                              builder: (context)=>SignInScreen()));
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => SignInScreen()));
                         },
                         child: Text(
                           "সাইন ইন",
                           style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 18,
-                            color: Colors.white
-                          ),
+                              fontWeight: FontWeight.bold,
+                              fontSize: 18,
+                              color: Colors.white),
                         ),
                       ),
                     ),
@@ -58,13 +65,15 @@ class _DecisionScreenState extends State<DecisionScreen> {
                       height: 40,
                       width: 300,
                       decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(16),
-                          color: Colors.black,
+                        borderRadius: BorderRadius.circular(16),
+                        color: Colors.green,
                       ),
                       child: FlatButton(
                         onPressed: () {
-                          Navigator.push(context, MaterialPageRoute(
-                              builder: (context)=>SignUpScreen()));
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => SignUpScreen()));
                         },
                         child: Text(
                           "সাইন আপ ",
@@ -81,7 +90,10 @@ class _DecisionScreenState extends State<DecisionScreen> {
                       onPressed: () {},
                       child: Text(
                         "এড়িয়ে যান ",
-                        style: TextStyle(color: Colors.black87),
+                        style: TextStyle(
+                            color: Colors.green,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                     ),
                   ],
