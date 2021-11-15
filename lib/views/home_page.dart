@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'thana_page.dart';
+
 class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -7,7 +9,7 @@ class MyHomePage extends StatelessWidget {
       backgroundColor: Colors.green[100],
       appBar: AppBar(
         backgroundColor: Colors.green,
-        title: Text("Home Page"),
+        title: Text("হোম পেজ"),
         centerTitle: true,
         elevation: 5,
       ),
@@ -23,7 +25,10 @@ class MyHomePage extends StatelessWidget {
               child: Card(
                 margin: EdgeInsets.all(8.0),
                 child: InkWell(
-                  onTap: (){},
+                  onTap: (){
+                    Navigator.push(context, MaterialPageRoute(
+                        builder: (context)=>ThanaPage()));
+                  },
                   splashColor: Colors.green,
                   child: Center(
                     child: Column(
@@ -36,9 +41,10 @@ class MyHomePage extends StatelessWidget {
                         ),
                         SizedBox(height: 10),
                         Text(
-                            "আমাদের সম্পর্কে",
+                            "থানা",
                           style: TextStyle(
-                            color: Colors.green
+                            color: Colors.green,
+                            fontSize: 30,
                           ),
                         ),
                       ],
